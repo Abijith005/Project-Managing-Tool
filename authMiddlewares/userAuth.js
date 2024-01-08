@@ -2,9 +2,7 @@ import jwtVerify from "../helpers/jwitVerify.js";
 
 export async function userAuth(req, res, next) {
   try {
-    console.log('user auth');
     const token = req.headers.authentication;
-    console.log(token,'tokkkkk');
     const authorized = jwtVerify(token);
     if (authorized.role === "User") {
       next();
@@ -12,8 +10,9 @@ export async function userAuth(req, res, next) {
       res.status(401).json({ success: false, message: "Unauthorized" });
     }
   } catch (error) {
+    console.log("Authorization Error ", error);
     res.status(500).json({ success: false, message: "Unauthorized" });
   }
 }
 
-export default userAuth
+export default userAuth;

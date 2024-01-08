@@ -1,25 +1,13 @@
 import projectModel from "../models/projectModel.js";
-import jwt from "jsonwebtoken";
 import taskModel from "../models/taskModel.js";
 import jwtDecode from "../helpers/jwtDecode.js";
 import mongoose from "mongoose";
 
-export async function newfn(req, res) {
-  try {
-    console.log(a);
-    res.status(200).json({ reaches: true });
-  } catch (error) {
-    res.status(500).json({ reaches: false });
-  }
-}
-
 export async function createTask(req, res) {
   try {
-    const user = jwt.decode(req.headers.authentication);
+    const user = jwtDecode(req.headers.authentication);
     const { taskName, projectId } = req.body;
-    console.log(projectId);
     const project = await projectModel.findOne({ _id: projectId });
-    console.log(project, user.id);
     if (project.members.includes(user.id)) {
       await taskModel.create({
         taskName: taskName,
@@ -96,8 +84,6 @@ export async function removeTask(req, res) {
     const userId = jwtDecode(req.headers.authentication).id;
     const { taskId } = req.params;
     const task = await taskModel.findOne({ _id: taskId });
-    console.log(task, userId);
-
     if (task.createdBy.toString() === userId) {
       await taskModel.deleteOne({ _id: taskId });
       res.status(200).json({ success: true, message: "task removed" });

@@ -2,8 +2,9 @@ import jwt from "jsonwebtoken";
 
 const jwtSign = (payload) => {
   try {
-    console.log('createing jwt', payload);
-    const token = jwt.sign(payload, process.env.JWT_SIGNATURE,{expiresIn:'1d'});
+    const token = jwt.sign(payload, process.env.JWT_SIGNATURE, {
+      expiresIn: "1d",
+    });
     return token;
   } catch (error) {
     console.log("Error", error);
@@ -11,4 +12,4 @@ const jwtSign = (payload) => {
   }
 };
 
-export default jwtSign
+export default jwtSign;

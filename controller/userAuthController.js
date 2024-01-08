@@ -20,7 +20,7 @@ export async function userLogin(req, res) {
     const user = await userModel.findOne({ email: email });
     if (user) {
       if (user.password === password) {
-        const userToken = jwtSign({ id: user.id, email: email,role:'User' });
+        const userToken = jwtSign({ id: user.id, email: email, role: "User" });
         res.setHeader("userToken", userToken);
         res
           .status(200)
