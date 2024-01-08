@@ -11,7 +11,7 @@ const projectSchema=new mongoose.Schema({
         requied:[true,'desc required']
     },
     members:{
-        type:[String],
+        type:[mongoose.Schema.Types.ObjectId],
         default:[],
         required:true
     },
