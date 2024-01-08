@@ -1,4 +1,4 @@
-import jwtVerify from "../Helpers/jwitVerify.js";
+import jwtVerify from "../helpers/jwitVerify.js";
 
  async function adminAuth(req,res,next){
     try {

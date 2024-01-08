@@ -1,4 +1,4 @@
-import projectModel from "../Models/projectModel.js";
+import projectModel from "../models/projectModel.js";
 import jwt from 'jsonwebtoken'
 
 export async function createProject(req, res) {

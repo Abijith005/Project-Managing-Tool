@@ -1,12 +1,12 @@
 import express from 'express'
 import morgan from 'morgan'
-import adminRouter from './Routes/adminRoutes.js'
-import userRouter from './Routes/userRoutes.js'
+import adminRouter from './routes/adminRoutes.js'
+import userRouter from './routes/userRoutes.js'
 import 'dotenv/config'
-import adminAuthRouter from './Routes/adminAuthRoutes.js'
+import adminAuthRouter from './routes/adminAuthRoutes.js'
 import dbConnect from './config/dbConnect.js'
 import AdminAuth from './authMiddlewares/adminAuth.js'
-import userAuthRouter from './Routes/userAuthRoutes.js'
+import userAuthRouter from './routes/userAuthRoutes.js'
 import userAuth from './authMiddlewares/userAuth.js'
 
 const app=express()

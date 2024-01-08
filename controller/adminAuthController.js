@@ -1,5 +1,5 @@
-import jwtSign from "../Helpers/jwtSign.js";
-import adminModel from "../Models/adminModel.js";
+import jwtSign from "../helpers/jwtSign.js";
+import adminModel from "../models/adminModel.js";
 
 
 export async function adminRegister(req, res) {

@@ -1,5 +1,5 @@
-import jwtSign from "../Helpers/jwtSign.js";
-import userModel from "../Models/userModel.js";
+import jwtSign from "../helpers/jwtSign.js";
+import userModel from "../models/userModel.js";
 
 export async function userRegister(req, res) {
   try {

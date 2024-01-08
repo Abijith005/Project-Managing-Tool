@@ -1,6 +1,6 @@
-import projectModel from "../Models/projectModel.js";
+import projectModel from "../models/projectModel.js";
 import jwt from "jsonwebtoken";
-import taskModel from "../Models/taskModel.js";
+import taskModel from "../models/taskModel.js";
 
 export async function newfn(req, res) {
   try {

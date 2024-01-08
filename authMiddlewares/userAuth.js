@@ -1,4 +1,4 @@
-import jwtVerify from "../Helpers/jwitVerify.js";
+import jwtVerify from "../helpers/jwitVerify.js";
 
 export async function userAuth(req, res, next) {
   try {
